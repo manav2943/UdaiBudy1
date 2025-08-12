@@ -42,6 +42,7 @@
       padding: 20px;
       width: 200px;
       transition: 0.3s;
+      cursor: pointer;
     }
     .topic-card:hover {
       transform: scale(1.05);
@@ -53,6 +54,18 @@
     .topic-title {
       font-size: 18px;
       font-weight: 600;
+    }
+    .hidden-content {
+      display: none;
+      margin-top: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: left;
     }
     footer {
       margin-top: 50px;
@@ -70,27 +83,72 @@
     </div>
 
     <div class="topics">
-      <div class="topic-card">
+      <div class="topic-card" data-target="hidden-cafes-content">
         <div class="icon">🧁</div>
         <div class="topic-title">Hidden Cafes</div>
       </div>
-      <div class="topic-card">
+      <div class="topic-card" data-target="secret-lakes-content">
         <div class="icon">🏞️</div>
         <div class="topic-title">Secret Lakes</div>
       </div>
-      <div class="topic-card">
+      <div class="topic-card" data-target="rooftop-views-content">
         <div class="icon">🌇</div>
         <div class="topic-title">Rooftop Views</div>
       </div>
-      <div class="topic-card">
+      <div class="topic-card" data-target="local-spots-content">
         <div class="icon">📍</div>
         <div class="topic-title">Local Hidden Spots</div>
       </div>
+    </div>
+
+    <!-- Hidden content sections -->
+    <div id="hidden-cafes-content" class="hidden-content">
+      <h3>Hidden Cafes in Udaipur</h3>
+      <p>Explore the lesser-known cafes tucked away in the alleys of Udaipur that offer amazing ambiance and unique flavors.</p>
+    </div>
+
+    <div id="secret-lakes-content" class="hidden-content">
+      <h3>Secret Lakes</h3>
+      <p>Discover beautiful and serene lakes in Udaipur that are often missed by tourists but loved by locals.</p>
+    </div>
+
+    <div id="rooftop-views-content" class="hidden-content">
+      <h3>Rooftop Views</h3>
+      <p>Experience breathtaking views of the city from some of the best rooftop spots that only locals know about.</p>
+    </div>
+
+    <div id="local-spots-content" class="hidden-content">
+      <h3>Local Hidden Spots</h3>
+      <p>Uncover unique local spots around Udaipur that provide authentic experiences away from the usual tourist trails.</p>
     </div>
 
     <footer>
       &copy; 2025 Udaibudy. All rights reserved.
     </footer>
   </div>
+
+  <script>
+    const topicCards = document.querySelectorAll('.topic-card');
+    const contents = document.querySelectorAll('.hidden-content');
+
+    topicCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const targetId = card.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+
+        // If clicked content is already visible, toggle hide it
+        if (targetContent.style.display === 'block') {
+          targetContent.style.display = 'none';
+        } else {
+          // Hide all contents first
+          contents.forEach(c => c.style.display = 'none');
+          // Show the clicked one
+          targetContent.style.display = 'block';
+          // Scroll to content smoothly
+          targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
