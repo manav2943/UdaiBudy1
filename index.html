@@ -202,4 +202,33 @@
 
   <!-- ✅ Working Script -->
   <script>
-    const topic
+    const topicCards = document.querySelectorAll('.topic-card');
+    const detailSections = document.querySelectorAll('.detail-section');
+    const backButtons = document.querySelectorAll('.back-btn');
+    const topicsContainer = document.querySelector('.topics');
+
+    topicCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const detailId = card.getAttribute('data-detail');
+        topicsContainer.style.display = 'none';
+        detailSections.forEach(section => {
+          if(section.id === detailId) {
+            section.classList.add('active');
+            section.scrollIntoView({behavior: 'smooth'});
+          } else {
+            section.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    backButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        detailSections.forEach(section => section.classList.remove('active'));
+        topicsContainer.style.display = 'flex';
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      });
+    });
+  </script>
+</body>
+</html>
