@@ -138,70 +138,66 @@
       </div>
     </div>
 
-    <!-- Detail Sections -->
+    <!-- Hidden Cafes -->
     <div id="hidden-cafes" class="detail-section">
       <h2>Hidden Cafes in Udaipur</h2>
-      <img src="images/hidden-cafe.jpg" alt="Hidden Cafe in Udaipur" />
-      <p>Explore the lesser-known cafes tucked away in the alleys of Udaipur that offer amazing ambiance and unique flavors.</p>
+      <img src="images/ginger-coffee-bar.jpg" alt="Ginger Coffee Bar" />
+      <p><strong>Ginger Coffee Bar & Bakery</strong>: Located in a quiet lane near Chandpole, this cozy cafe offers fresh croissants, rich espresso, and a relaxing vibe away from the crowd.</p>
+
+      <img src="images/jheel-cafe.jpg" alt="Jheel Cafe" />
+      <p><strong>Jheel Cafe</strong>: Situated by the lake, this hidden gem gives you a stunning lakeside view with calm ambiance and amazing coffee.</p>
+
+      <img src="images/bohemian-cafe.jpg" alt="Bohemian Cafe" />
+      <p><strong>Bohemian Cafe</strong>: A colorful rooftop with quirky decor – perfect for peaceful work sessions or evening chai.</p>
+
       <button class="back-btn">Back to Topics</button>
     </div>
 
+    <!-- Secret Lakes -->
     <div id="secret-lakes" class="detail-section">
       <h2>Secret Lakes in Udaipur</h2>
-      <img src="images/secret-lake.jpg" alt="Secret Lake in Udaipur" />
-      <p>Discover beautiful and serene lakes in Udaipur that are often missed by tourists but loved by locals.</p>
+      <img src="images/badi-lake.jpg" alt="Badi Lake" />
+      <p><strong>Badi Lake</strong>: A peaceful and scenic lake ideal for sunrise walks. It’s rarely crowded and perfect for a quiet picnic.</p>
+
+      <img src="images/udaisagar-lake.jpg" alt="Udai Sagar Lake" />
+      <p><strong>Udai Sagar Lake</strong>: A tranquil lake east of the city where you can catch reflection of hills during golden hour.</p>
+
+      <img src="images/swaroop-sagar.jpg" alt="Swaroop Sagar" />
+      <p><strong>Swaroop Sagar</strong>: Often missed by tourists, this hidden waterbody connects to the main lake system with peaceful views.</p>
+
       <button class="back-btn">Back to Topics</button>
     </div>
 
+    <!-- Rooftop Views -->
     <div id="rooftop-views" class="detail-section">
       <h2>Rooftop Views in Udaipur</h2>
-      <img src="images/rooftop-view.jpg" alt="Rooftop View in Udaipur" />
-      <p>Experience breathtaking views of the city from some of the best rooftop spots that only locals know about.</p>
+      <img src="images/upre-rooftop.jpg" alt="Upre Rooftop" />
+      <p><strong>Upré by 1559 AD</strong>: One of the most premium rooftops with dazzling night views of Lake Pichola and the City Palace.</p>
+
+      <img src="images/tribute-rooftop.jpg" alt="Tribute Restaurant" />
+      <p><strong>Tribute Restaurant</strong>: Overlooks Fateh Sagar Lake and the Aravalli hills. Best visited during sunset for soft lighting and breeze.</p>
+
+      <img src="images/sunset-terrace.jpg" alt="Sunset Terrace" />
+      <p><strong>Sunset Terrace</strong>: Located near Jagmandir Ghat, it gives a close-up of Taj Lake Palace with a royal experience.</p>
+
       <button class="back-btn">Back to Topics</button>
     </div>
 
+    <!-- Local Hidden Spots -->
     <div id="local-spots" class="detail-section">
       <h2>Local Hidden Spots in Udaipur</h2>
-      <img src="images/local-spot.jpg" alt="Local Hidden Spot in Udaipur" />
-      <p>Uncover unique local spots around Udaipur that provide authentic experiences away from the usual tourist trails.</p>
+      <img src="images/neemach-mata.jpg" alt="Neemach Mata Temple" />
+      <p><strong>Neemach Mata Trek</strong>: A short hike gives you stunning aerial views of Fateh Sagar and the entire city. Go during early mornings.</p>
+
+      <img src="images/old-city-alleys.jpg" alt="Old City Alleys" />
+      <p><strong>Old City Alleys</strong>: Explore hand-painted walls, old havelis, and handmade crafts tucked in narrow streets behind Jagdish Temple.</p>
+
+      <img src="images/clock-tower-bazaar.jpg" alt="Clock Tower Bazaar" />
+      <p><strong>Ghanta Ghar Market</strong>: The bustling market near the clock tower is filled with local snacks, fabrics, and silver jewelry.</p>
+
       <button class="back-btn">Back to Topics</button>
     </div>
 
     <footer>
       &copy; 2025 Udaibudy. All rights reserved.
-    </footer>
-  </div>
-
-  <script>
-    const topicCards = document.querySelectorAll('.topic-card');
-    const detailSections = document.querySelectorAll('.detail-section');
-    const backButtons = document.querySelectorAll('.back-btn');
-    const topicsContainer = document.querySelector('.topics');
-
-    topicCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const detailId = card.getAttribute('data-detail');
-        // Hide topics and show selected detail
-        topicsContainer.style.display = 'none';
-        detailSections.forEach(section => {
-          if(section.id === detailId) {
-            section.classList.add('active');
-            section.scrollIntoView({behavior: 'smooth'});
-          } else {
-            section.classList.remove('active');
-          }
-        });
-      });
-    });
-
-    backButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Hide all details, show topics again
-        detailSections.forEach(section => section.classList.remove('active'));
-        topicsContainer.style.display = 'flex';
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      });
-    });
-  </script>
-</body>
-</html>
+    </footer
